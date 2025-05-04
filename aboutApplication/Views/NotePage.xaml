@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="aboutApplication.Views.NotePage"
+    Title="Notes"
+    BackgroundColor="{OnPlatform Android=#2381c6, WinUI=#cf81c6}">
+
+    <StackLayout Padding="20" Spacing="20">
+        <Entry x:Name="inputEntry" Text="{Binding Text}" Placeholder="/напишите свой текст сюда/"/>
+        <HorizontalStackLayout Spacing="10">
+            <Button Text="сохранить" 
+                    Clicked="OnSaveButtonClicked" 
+                    HorizontalOptions="FillAndExpand"
+                    BackgroundColor="{OnPlatform Android=#23ecc6, WinUI=#ff1ec6}"/>
+            <Button Text="удалить" 
+                    Clicked="OnDeleteButtonClicked" 
+                    HorizontalOptions="FillAndExpand"
+                    BackgroundColor="{OnPlatform Android=#23ecc6, WinUI=#ff1ec6}"/>
+        </HorizontalStackLayout>
+        <Label x:Name="outputLabel" Text="{Binding Text}" FontSize="16"/>
+    </StackLayout>
+</ContentPage>

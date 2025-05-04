@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:models="clr-namespace:aboutApplication.Models"
+    x:Class="aboutApplication.Views.AboutPage"
+    Title="About"
+    BackgroundColor="{OnPlatform Android=#2381c6, WinUI=#cf81c6}">
+
+    <VerticalStackLayout Spacing="20" Margin="0,40,0,0" VerticalOptions="Center">
+        <Image Source="logo.png" HeightRequest="200" Aspect="AspectFit"/>
+        <Label Text="{Binding InfoText}" FontSize="Title" FontAttributes="Bold" HorizontalOptions="Center"/>
+        <Button Text="Нажми меня!" 
+                Clicked="OnOpenWebsiteClicked" 
+                Padding="30,10"
+                BackgroundColor="{OnPlatform Android=#23ecc6, WinUI=#ff1ec6}"/>
+    </VerticalStackLayout>
+</ContentPage>

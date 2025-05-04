@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="aboutApplication.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:aboutApplication.Views"
+    Shell.FlyoutBehavior="Disabled">
+
+    <TabBar>
+        <ShellContent 
+            Title="Notes" 
+            ContentTemplate="{DataTemplate views:NotePage}" 
+            Route="NotePage"/>
+
+        <ShellContent 
+            Title="About" 
+            ContentTemplate="{DataTemplate views:AboutPage}" 
+            Route="AboutPage"/>
+    </TabBar>
+
+    <Shell.Resources>
+        <Style ApplyToDerivedTypes="True" TargetType="Shell">
+            <Setter Property="Shell.BackgroundColor">
+                <OnPlatform x:TypeArguments="Color">
+                    <On Platform="Android" Value="Blue" />
+                    <On Platform="WinUI" Value="Red" />
+                </OnPlatform>
+            </Setter>
+        </Style>
+    </Shell.Resources>
+    
+</Shell>
